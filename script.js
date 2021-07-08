@@ -3,11 +3,14 @@
     constructor(item, contain,positionX, positionY){
         this.item = item;
         this.container = contain;
+        this.positionX = parseInt(positionX);
+        this.positionY = parseInt(positionY);
+        this.set(this.positionX,this.positionY);
+    }
+    set(positionX, positionY) {
         let dragItem = document.querySelector(`${this.item}`);
         dragItem.style.left = `${parseInt(positionX)-dragItem.offsetWidth/2}px`
         dragItem.style.top = `${parseInt(positionY)-dragItem.offsetHeight/2}px`
-        this.positionX = parseInt(positionX);
-        this.positionY = parseInt(positionY);
         let container = document.querySelector(`${this.container}`);
         let active = false;
         let currentX;
