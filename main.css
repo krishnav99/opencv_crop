@@ -1,0 +1,74 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: whitesmoke;
+    font-size: 18px;
+}
+
+#input, #output, #form, #canvas-input{
+    display: none;
+}
+
+#status{
+    margin-top:10%;
+}
+
+#container{
+    position: relative;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#input canvas{
+    margin: 0;
+    top: 0;
+    left: 0px;
+    position: absolute;
+}
+
+#editCanvas{
+    z-index: 2;
+}
+
+.item {
+    display: inline-block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.363);
+    border: 5px solid rgba(150, 150, 150, 0.5);
+    border-radius: 50%; 
+    touch-action: none;
+    user-select: none;
+    z-index: 3;
+  }
+
+.item:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.363);
+    border: 5px solid rgba(255, 255, 255, 0.363);
+}
+
+.item:active{
+    cursor: all-scroll;
+}
+
+button{
+    font-size: 18px;
+}
+
+.output{
+    display: none;
+}
+
+form{
+    margin-top: 50px;
+}
+
+form input{
+    width: 100px;
+}
+

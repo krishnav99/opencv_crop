@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Resizing using OpenCV.js</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <h1>Wrap Perspective using Opencv</h1>
+  <p id="status">OpenCV.js is loading...</p>
+ 
+    <div id="input">
+      <div id="container">
+        <canvas id="canvas-input"></canvas>
+        <canvas id="edit-canvas"></canvas>
+        <div class="item" id="item1"></div>
+        <div class="item" id="item2"></div>
+        <div class="item" id="item3"></div>
+        <div class="item" id="item4"></div>
+      </div>
+     
+      <br>
+      <input type="file" id="file-input" name="file" hidden />
+      <button type="button" id="upload-button">Upload</button>
+    </div>
+  
+    <div id="form">
+      <form id="resize-form">
+        <label>Height: </label>
+        <input type="number" id="height" oninput="validity.valid|| (value='');" required>
+        <button>Crop</button>
+      </form>
+    <div>
+      
+    <div id="output">
+      <canvas id="canvas-output"></canvas>
+      <br>
+      <a href="" download="resized-image.jpg" onclick="download_image(this);">
+        <button>Download</button>
+      </a> 
+    </div>
+  
+ 
+<script src="script.js" type="text/javascript"></script>
+<script async src="opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+</body>
+</html>
