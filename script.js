@@ -1,5 +1,5 @@
  //Moveable coordinates
- class Bubble{
+ class DragItem{
     constructor(item, contain,positionX, positionY){
         this.item = item;
         this.container = contain;
@@ -65,12 +65,10 @@
           }
         }
 
-
         var changePosition = function(x,y){
           this.positionX = x+parseInt(positionX);
           this.positionY = y+parseInt(positionY);
         }.bind(this);
-
         
         function setTranslate(xPos, yPos, el) {
           el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
@@ -82,12 +80,8 @@
 function drawQuad(canvas,points){
     //this function draws a line
     function drawLine(ctx, begin, end, stroke = 'red', width = 1) {
-      if (stroke) {
-          ctx.strokeStyle = stroke;
-      }
-      if (width) {
-          ctx.lineWidth = width;
-      }
+      if (stroke) ctx.strokeStyle = stroke;
+      if (width) ctx.lineWidth = width;
       ctx.beginPath();
       ctx.moveTo(...begin);
       ctx.lineTo(...end);
@@ -121,7 +115,6 @@ inputBtn.addEventListener('change', (e) => {
 
 var points = [];
 
-
 img.onload = function(){
     //Drawing the image on the input-canvas
     let canvas = document.getElementById('canvas-input');
@@ -134,10 +127,10 @@ img.onload = function(){
 
     //Creating and positioning the moveable bubbles
     var bubbles= []
-    bubbles[0] = new Bubble("#item1","#container","50","50");
-    bubbles[1] = new Bubble("#item2","#container", `${canvas.offsetWidth-50}`,`50`);
-    bubbles[2] = new Bubble("#item3","#container",`${canvas.offsetWidth-50}`,`${canvas.offsetHeight-50}`);
-    bubbles[3] = new Bubble("#item4","#container",`50`,`${canvas.offsetHeight-50}`);
+    bubbles[0] = new DragItem("#item1","#container","50","50");
+    bubbles[1] = new DragItem("#item2","#container", `${canvas.offsetWidth-50}`,`50`);
+    bubbles[2] = new DragItem("#item3","#container",`${canvas.offsetWidth-50}`,`${canvas.offsetHeight-50}`);
+    bubbles[3] = new DragItem("#item4","#container",`50`,`${canvas.offsetHeight-50}`);
 
     //This function will initialize and change the cropping lines when the points are moved
     function transformQuad(){
